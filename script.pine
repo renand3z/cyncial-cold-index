@@ -1,0 +1,25 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © user
+
+//@version=5
+indicator("Cynical Cold Index")
+
+gold = request.security("COMEX:GC1!", timeframe.period, close) * 1
+oil = request.security("NYMEX:CL1!", timeframe.period, close) * 30.59273422562141
+coffee = request.security("ICEUS:KC1!", timeframe.period, close) * 14.75334255417243
+nat_gas = request.security("NYMEX:NG1!", timeframe.period, close) * 835.509138381201
+silver = request.security("COMEX:SI1!", timeframe.period, close) * 88.88888888888889
+sugar = request.security("ICEUS:SB1!", timeframe.period, close) * 104.2345276872964
+corn = request.security("CBOT:ZC1!", timeframe.period, close) * 4.204993429697766
+wheat = request.security("CBOT:ZW1!", timeframe.period, close) * 2.909090909090909
+cotton = request.security("ICEUS:CT1!", timeframe.period, close) * 2327.272727272727   
+copper = request.security("COMEX:HG1!", timeframe.period, close) * 614.4393241167435
+iron_one = request.security("SGX:FEF1!", timeframe.period, close) * 18.75732708089097
+cattle = request.security("CME:LE1!", timeframe.period, close) * 13.22314049586777
+urea = request.security("CBOT:UFB1!", timeframe.period, close) * 6.550665301944729
+
+asset = request.security(syminfo.tickerid, timeframe.period, close)
+
+basket_sum = (gold + oil + coffee + nat_gas + silver + sugar + corn + wheat + cotton + copper + iron_one + cattle + urea) / 100000
+
+plot(asset / basket_sum)
