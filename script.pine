@@ -1,5 +1,4 @@
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
-// © user
 
 //@version=5
 indicator("Cynical Cold Index")
@@ -22,4 +21,4 @@ asset = request.security(syminfo.tickerid, timeframe.period, close)
 
 basket_sum = (gold + oil + coffee + nat_gas + silver + sugar + corn + wheat + cotton + copper + iron_one + cattle + urea) / 100000
 
-plot(asset / basket_sum)
+plot( asset / basket_sum, color = color.teal)
