@@ -4,6 +4,8 @@
 
 This TradingView indicator calculates the [Cynical Cold Index](https://www.tradingview.com/script/7jya0bKN-Cynical-Cold-Index/), which is a weighted basket of commodity prices designed to track economic conditions. It compares the price of a given asset to the index value. 
 
+![screenshoot](screenshot.png)
+
 ## Indicator Details
 
 - Uses close prices for each commodity contract
